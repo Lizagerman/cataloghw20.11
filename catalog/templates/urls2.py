@@ -1,6 +1,8 @@
-from django.urls import path
+from django.contrib.sitemaps.views import index
+from django.urls import path, include
 
-from . import views
+from catalog.views import contacts
+from config import views
 
 
 """
@@ -24,4 +26,14 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+]
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('catalog.urls'))
+]
+
+urlpatterns = [
+    path('', index),
+    path('contacts/', contacts)
 ]
