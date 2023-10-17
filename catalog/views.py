@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+
+
 from .models import Question
 
 def index(request):
@@ -13,3 +15,13 @@ def contacts(request):
         message = request.POST.get('message')
         print(f'{name} ({phone}): {message}')
     return render(request, 'catalog/contacts.html')
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('catalog.urls'))
+]
+
+urlpatterns = [
+    path('', index),
+    path('contacts/', contacts)
+]

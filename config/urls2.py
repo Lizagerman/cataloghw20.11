@@ -3,6 +3,7 @@ from django.urls import path, include
 
 from catalog.views import contacts
 from config import views
+from views import urlpatterns
 
 
 """
@@ -28,12 +29,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('catalog.urls'))
-]
-
-urlpatterns = [
-    path('', index),
-    path('contacts/', contacts)
-]
