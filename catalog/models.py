@@ -2,8 +2,8 @@ from django.db import models
 
 
 class Category(models.Model):
-    #verbose_name = 'товар'  # Настройка для наименования одного объекта
-    #verbose_name_plural = 'товары'  # Настройка для наименования набора объектов
+    # verbose_name = 'товар'  # Настройка для наименования одного объекта
+    # verbose_name_plural = 'товары'  # Настройка для наименования набора объектов
     name = models.CharField(max_length=150, verbose_name='товар')
     description = models.CharField(max_length=150, verbose_name='описание')
 
@@ -20,5 +20,16 @@ class Category(models.Model):
         # Строковое отображение объекта
         return f'{self.first_name} {self.last_name}'
 
+        class Meta:
+            verbose_name = 'товар'
+            verbose_name_plural = 'товары'
+            ordering = ('name',)
+
+    class Meta:
+        verbose_name = 'категория'
+        verbose_name_plural = 'категории'
+        ordering = ('description',)
+
     pass
+
 
