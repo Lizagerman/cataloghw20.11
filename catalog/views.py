@@ -1,4 +1,9 @@
+from os import path
+
 from django.shortcuts import render
+from django.urls import include
+
+from catalog import admin
 
 
 def index(request):
@@ -14,12 +19,4 @@ def contacts(request):
     return render(request, 'catalog/contacts.html')
 
 
-urlpatterns = (
-    path('admin/', admin.site.urls),
-    path('', include('catalog.urls'))
-)
 
-urlpatterns = [
-    path('', index),
-    path('contacts/', contacts)
-]
