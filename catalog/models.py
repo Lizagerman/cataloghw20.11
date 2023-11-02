@@ -7,6 +7,12 @@ class Category(models.Model):
     name = models.CharField(max_length=150, verbose_name='товар')
     description = models.CharField(max_length=150, verbose_name='описание')
 
+    class Meta:
+        verbose_name = 'категория'
+        verbose_name_plural = 'категории'
+        ordering = ('description',)
+
+
 class Product(models.Model):
     name = models.CharField(max_length=150, verbose_name='товар')
     description = models.CharField(max_length=150, verbose_name='описание')
@@ -16,20 +22,14 @@ class Product(models.Model):
     date_creation = models.CharField(max_length=150, DateField='создание')
     date_last_use = models.CharField(max_length=150, DateField='последнее исп')
 
-def __str__(self):
-    # Строковое отображение объекта
-    return f'{self.first_name} {self.last_name}'
-
     class Meta:
         verbose_name = 'товар'
         verbose_name_plural = 'товары'
         ordering = ('name',)
 
-class Meta:
-    verbose_name = 'категория'
-    verbose_name_plural = 'категории'
-    ordering = ('description',)
+
+def __str__(self):
+    # Строковое отображение объекта
+    return f'{self.first_name} {self.last_name}'
 
 pass
-
-
