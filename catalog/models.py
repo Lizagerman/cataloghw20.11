@@ -19,8 +19,8 @@ class Product(models.Model):
     image = models.ImageField(upload_to='картинки', max_length=1000)
     category = models.CharField(max_length=150, verbose_name='категория')
     price = models.CharField(max_length=150, verbose_name='цена')
-    date_creation = models.CharField(max_length=150, DateField='создание')
-    date_last_use = models.CharField(max_length=150, DateField='последнее исп')
+    date_creation = models.DateTimeField(auto_now_add=True)
+    date_last_use = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = 'товар'
