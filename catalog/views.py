@@ -1,10 +1,9 @@
 from django.shortcuts import render
 
 
-
 def index_homepage(request):
-    return render(request, 'catalog/home.html')
+    return render(request, 'catalog/templates.home.html')
 
 
 def contacts(request):
-    return render(request, 'catalog/contacts.html')
+    return render(request, 'catalog/templates.contacts.html')
